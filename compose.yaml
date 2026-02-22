@@ -1,0 +1,18 @@
+services:
+  backend: 
+    build: ./backend
+    container_name: backend-api
+    ports: 
+      - "5050:5050"
+    restart: always
+
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    environment: 
+      POSTGRES_USER: dba
+      POSTGRES_PASSWORD: dba123
+      POSTGRES_DB: appdb
+    ports: 
+      - "5432:5432"
+    restart: always
