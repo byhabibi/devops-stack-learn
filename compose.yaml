@@ -4,6 +4,8 @@ services:
     container_name: backend-api
     ports: 
       - "5050:5050"
+    depends_on: 
+      - postgres
     restart: always
 
   postgres:
@@ -15,4 +17,11 @@ services:
       POSTGRES_DB: appdb
     ports: 
       - "5432:5432"
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-web
+    ports:
+      - "3000:80"
     restart: always

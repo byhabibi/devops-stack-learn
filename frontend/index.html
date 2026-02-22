@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Production</title>
+</head>
+<body>
+    <h1>🔥 DevOps Production Stack Running</h1>
+    <p>Frontend container live</p>
+
+    <button onclick="checkAPI()">Test Backend API</button>
+    <pre id="result"></pre>
+
+<script>
+function checkAPI(){
+fetch('/api')
+.then(res => res.json())
+.then(data => {
+document.getElementById("result").innerText =
+JSON.stringify(data, null, 2);
+})
+}
+</script>
+
+</body>
+</html>
